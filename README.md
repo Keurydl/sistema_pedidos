@@ -1,130 +1,130 @@
-# Sistema de Gestión de Pedidos y Pagos 📦🌍
+# Order and Payment Management System 📦🌍
 
-Este es un sistema desarrollado en Laravel para la gestión de pedidos y registro de pagos de clientes. Permite a los usuarios autenticados crear, ver y eliminar sus propios pedidos y pagos asociados.
+This is a system developed in Laravel for managing orders and recording customer payments. It allows authenticated users to create, view, and delete their own orders and associated payments.
 
-<!-- (Opcional) Aquí podrías poner un screenshot:
-![Screenshot de la App](ruta/a/tu/screenshot.png)
+<!-- (Optional) You could include a screenshot here:
+![App Screenshot](path/to/your/screenshot.png)
 -->
 
-## Características Principales 📍
+## Main Features 📍
 
-*   Autenticación de usuarios (Registro e Inicio de Sesión).
-*   Creación, visualización y eliminación de Pedidos por usuario.
-*   Creación, visualización y eliminación de Pagos asociados a pedidos, por usuario.
-*   Interfaz de usuario responsiva.
+* User authentication (Registration and Login).
+* Creation, viewing, and deletion of orders per user.
+* Creation, viewing, and deletion of payments associated with orders, per user.
+* Responsive user interface.
 
-## Tecnologías Utilizadas 👨‍💻
+## Technologies Used 👨‍💻
 
-*   **Framework Backend:** Laravel 10
-*   **Lenguaje:** PHP 8.1+
-*   **Base de Datos:** MySQL (localmente) / PostgreSQL (en despliegue - *ajusta según tu elección final*)
-*   **Frontend:** Blade con Bootstrap (o la tecnología que uses)
-*   **Gestor de Dependencias PHP:** Composer
-*   **Gestor de Paquetes Frontend:** NPM (si aplica)
+* **Backend Framework:** Laravel 10
+* **Language:** PHP 8.1+
+* **Database:** MySQL (locally) / PostgreSQL (on deployment - *adjust based on your final choice*)
+* **Frontend:** Blade with Bootstrap (or whatever technology you use)
+* **PHP Dependency Manager:** Composer
+* **Fronend Package Manager:** NPM (if applicable)
 
-## Prerrequisitos🤔
+## Prerequisites 🤔
 
-Asegúrate de tener instalados los siguientes componentes antes de empezar:
+Make sure you have the following components installed before you begin:
 
-*   PHP >= 8.1
-*   Composer 2.x
-*   Node.js y NPM (si vas a compilar assets de frontend)
-*   Servidor de Base de Datos (MySQL 5.7+ / MariaDB 10.3+ o PostgreSQL)
-*   Git
+* PHP >= 8.1
+* Composer 2.x
+* Node.js and NPM (if you're building frontend assets)
+* Database Server (MySQL 5.7+ / MariaDB 10.3+ or PostgreSQL)
+* Git
 
-## Instalación y Configuración Local 🔋
+## Local Installation and Configuration 🔋
 
-Sigue estos pasos para configurar el proyecto en tu entorno local:
+Follow these steps to set up the project in your local environment:
 
-1.  **Clona el repositorio:**
-    ```bash
-    git clone [https://github.com/Keurydl/sistema_pedidos.git](https://github.com/Keurydl/sistema_pedidos.git)
-    cd sistema_pedidos
-    ```
+1. Clone the repository:
 
-2.  **Instala las dependencias de PHP:**
-    ```bash
-    composer install
-    ```
+```bash
+git clone [https://github.com/Keurydl/sistema_pedidos.git](https://github.com/Keurydl/sistema_pedidos.git)
+cd sistema_pedidos
+```
 
-3.  **Instala las dependencias de Node.js (si es necesario):**
-    ```bash
-    npm install
-    ```
+2. Install PHP dependencies:
+```bash
+composer install
+```
 
-4.  **Crea tu archivo de entorno:**
-    Copia el archivo de ejemplo `.env.example` a `.env`:
-    ```bash
-    cp .env.example .env
-    ```
+3. Install Node.js dependencies (if necessary):
+```bash
+npm install
+```
 
-5.  **Genera la clave de la aplicación:**
-    ```bash
-    php artisan key:generate
-    ```
+4. Create your environment file:
+Copy the `.env.example` example file to `.env`:
+```bash
+cp .env.example .env
+```
 
-6.  **Configura tu base de datos en el archivo `.env`:**
-    Abre el archivo `.env` y actualiza las siguientes variables con los detalles de tu base de datos local:
-    ```ini
-    DB_CONNECTION=mysql
-    DB_HOST=127.0.0.1
-    DB_PORT=3306
-    DB_DATABASE=sistema_pedidos # O el nombre de tu BD local
-    DB_USERNAME=root          # O tu usuario de BD local
-    DB_PASSWORD=              # O tu contraseña de BD local
+5. Generate the application key:
+```bash
+php artisan key:generate
+```
 
-    APP_URL=http://localhost:8000
-    ```
+6. **Configure your database in the `.env` file:**
+Open the `.env` file and update the following variables with your local database details:
+```ini
+DB_CONNECTION=mysql
+DB_HOST=127.0.0.1
+DB_PORT=3306
+DB_DATABASE=order_system # Or your local database name
+DB_USERNAME=root # Or your local database username
+DB_PASSWORD= # Or your local database password
 
-7.  **Ejecuta las migraciones para crear las tablas en la base de datos:**
-    ```bash
-    php artisan migrate
-    ```
+APP_URL=http://localhost:8000
+```
 
-8.  **(Opcional) Ejecuta los seeders para poblar la base de datos con datos de prueba:**
-    ```bash
-    php artisan db:seed
-    ```
+7. **Run the migrations to create the tables in the database:**
+```bash
+php artisan migrate
+```
 
-9.  **Compila los assets de frontend (si es necesario):**
-    ```bash
-    npm run dev
-    ```
-    (O `npm run build` para producción)
+8. **(Optional) Run the seeders to populate the database with test data:**
+```bash
+php artisan db:seed
+```
 
-10. **Inicia el servidor de desarrollo de Laravel:**
-    ```bash
-    php artisan serve
-    ```
+9. **Compile the frontend assets (if necessary):**
+```bash
+npm run dev
+```
+(Or `npm run build` for production)
 
-11. **¡Listo!** Abre tu navegador y visita `http://localhost:8000`.
+10. **Start the Laravel development server:**
+```bash
+php artisan serve
+```
 
-## Demostracion:
+11. **Done!** Open your browser and visit `http://localhost:8000`.
 
-# Inicio:
+## Demo:
+
+# Start:
 ![image](https://github.com/user-attachments/assets/b09190a3-4896-43ae-b451-11265c2f1020)
 
-# Categorias:
+# Categories:
 ![image](https://github.com/user-attachments/assets/61f39414-fe14-490d-853b-24fb13e245ac)
 
-# Productos:
+# Products:
 ![image](https://github.com/user-attachments/assets/b6dac83a-4452-45d1-936e-909e5a8a749d)
 
-# Pedidos y pagos:
+# Orders and payments:
 ![image](https://github.com/user-attachments/assets/daff4b76-e184-4524-b074-dfeafcbe4f16)
 
-# Contacto:
+# Contact:
 ![image](https://github.com/user-attachments/assets/4555fe67-c736-4233-8752-62ab9cf7b95b)
 
-# Panel del admin:
+# Admin panel:
 ![image](https://github.com/user-attachments/assets/139de4f1-0f78-458f-b75e-050673b3d7b3)
 
-# Administracion de productos:
+# Administration of products:
 ![image](https://github.com/user-attachments/assets/ddbb49ce-5f9e-484a-8815-a24d3e3db430)
 
-# Administracion de categorias:
+# Category administration:
 ![image](https://github.com/user-attachments/assets/78794889-5ad3-419d-a97c-0af0d03e7f72)
 
-# Administracion de usuarios:
+# User administration:
 ![image](https://github.com/user-attachments/assets/a2e9ca2d-40b8-4182-b43d-64fa5c9185a9)
-
