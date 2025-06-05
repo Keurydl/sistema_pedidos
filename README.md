@@ -1,66 +1,130 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
+# Sistema de Gestión de Pedidos y Pagos 📦🌍
 
-<p align="center">
-<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+Este es un sistema desarrollado en Laravel para la gestión de pedidos y registro de pagos de clientes. Permite a los usuarios autenticados crear, ver y eliminar sus propios pedidos y pagos asociados.
 
-## About Laravel
+<!-- (Opcional) Aquí podrías poner un screenshot:
+![Screenshot de la App](ruta/a/tu/screenshot.png)
+-->
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+## Características Principales 📍
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+*   Autenticación de usuarios (Registro e Inicio de Sesión).
+*   Creación, visualización y eliminación de Pedidos por usuario.
+*   Creación, visualización y eliminación de Pagos asociados a pedidos, por usuario.
+*   Interfaz de usuario responsiva.
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+## Tecnologías Utilizadas 👨‍💻
 
-## Learning Laravel
+*   **Framework Backend:** Laravel 10
+*   **Lenguaje:** PHP 8.1+
+*   **Base de Datos:** MySQL (localmente) / PostgreSQL (en despliegue - *ajusta según tu elección final*)
+*   **Frontend:** Blade con Bootstrap (o la tecnología que uses)
+*   **Gestor de Dependencias PHP:** Composer
+*   **Gestor de Paquetes Frontend:** NPM (si aplica)
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+## Prerrequisitos🤔
 
-You may also try the [Laravel Bootcamp](https://bootcamp.laravel.com), where you will be guided through building a modern Laravel application from scratch.
+Asegúrate de tener instalados los siguientes componentes antes de empezar:
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains thousands of video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+*   PHP >= 8.1
+*   Composer 2.x
+*   Node.js y NPM (si vas a compilar assets de frontend)
+*   Servidor de Base de Datos (MySQL 5.7+ / MariaDB 10.3+ o PostgreSQL)
+*   Git
 
-## Laravel Sponsors
+## Instalación y Configuración Local 🔋
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the [Laravel Partners program](https://partners.laravel.com).
+Sigue estos pasos para configurar el proyecto en tu entorno local:
 
-### Premium Partners
+1.  **Clona el repositorio:**
+    ```bash
+    git clone [https://github.com/Keurydl/sistema_pedidos.git](https://github.com/Keurydl/sistema_pedidos.git)
+    cd sistema_pedidos
+    ```
 
-- **[Vehikl](https://vehikl.com/)**
-- **[Tighten Co.](https://tighten.co)**
-- **[WebReinvent](https://webreinvent.com/)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel/)**
-- **[Cyber-Duck](https://cyber-duck.co.uk)**
-- **[DevSquad](https://devsquad.com/hire-laravel-developers)**
-- **[Jump24](https://jump24.co.uk)**
-- **[Redberry](https://redberry.international/laravel/)**
-- **[Active Logic](https://activelogic.com)**
-- **[byte5](https://byte5.de)**
-- **[OP.GG](https://op.gg)**
+2.  **Instala las dependencias de PHP:**
+    ```bash
+    composer install
+    ```
 
-## Contributing
+3.  **Instala las dependencias de Node.js (si es necesario):**
+    ```bash
+    npm install
+    ```
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+4.  **Crea tu archivo de entorno:**
+    Copia el archivo de ejemplo `.env.example` a `.env`:
+    ```bash
+    cp .env.example .env
+    ```
 
-## Code of Conduct
+5.  **Genera la clave de la aplicación:**
+    ```bash
+    php artisan key:generate
+    ```
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+6.  **Configura tu base de datos en el archivo `.env`:**
+    Abre el archivo `.env` y actualiza las siguientes variables con los detalles de tu base de datos local:
+    ```ini
+    DB_CONNECTION=mysql
+    DB_HOST=127.0.0.1
+    DB_PORT=3306
+    DB_DATABASE=sistema_pedidos # O el nombre de tu BD local
+    DB_USERNAME=root          # O tu usuario de BD local
+    DB_PASSWORD=              # O tu contraseña de BD local
 
-## Security Vulnerabilities
+    APP_URL=http://localhost:8000
+    ```
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+7.  **Ejecuta las migraciones para crear las tablas en la base de datos:**
+    ```bash
+    php artisan migrate
+    ```
 
-## License
+8.  **(Opcional) Ejecuta los seeders para poblar la base de datos con datos de prueba:**
+    ```bash
+    php artisan db:seed
+    ```
 
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+9.  **Compila los assets de frontend (si es necesario):**
+    ```bash
+    npm run dev
+    ```
+    (O `npm run build` para producción)
+
+10. **Inicia el servidor de desarrollo de Laravel:**
+    ```bash
+    php artisan serve
+    ```
+
+11. **¡Listo!** Abre tu navegador y visita `http://localhost:8000`.
+
+## Demostracion:
+
+# Inicio:
+![image](https://github.com/user-attachments/assets/b09190a3-4896-43ae-b451-11265c2f1020)
+
+# Categorias:
+![image](https://github.com/user-attachments/assets/61f39414-fe14-490d-853b-24fb13e245ac)
+
+# Productos:
+![image](https://github.com/user-attachments/assets/b6dac83a-4452-45d1-936e-909e5a8a749d)
+
+# Pedidos y pagos:
+![image](https://github.com/user-attachments/assets/daff4b76-e184-4524-b074-dfeafcbe4f16)
+
+# Contacto:
+![image](https://github.com/user-attachments/assets/4555fe67-c736-4233-8752-62ab9cf7b95b)
+
+# Panel del admin:
+![image](https://github.com/user-attachments/assets/139de4f1-0f78-458f-b75e-050673b3d7b3)
+
+# Administracion de productos:
+![image](https://github.com/user-attachments/assets/ddbb49ce-5f9e-484a-8815-a24d3e3db430)
+
+# Administracion de categorias:
+![image](https://github.com/user-attachments/assets/78794889-5ad3-419d-a97c-0af0d03e7f72)
+
+# Administracion de usuarios:
+![image](https://github.com/user-attachments/assets/a2e9ca2d-40b8-4182-b43d-64fa5c9185a9)
+
