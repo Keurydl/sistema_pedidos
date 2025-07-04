@@ -100,8 +100,6 @@ php artisan serve
 
 11. **Done!** Open your browser and visit `http://localhost:8000`.
 
-## Demo:
-
 # Start:
 ![image](https://github.com/user-attachments/assets/b09190a3-4896-43ae-b451-11265c2f1020)
 
